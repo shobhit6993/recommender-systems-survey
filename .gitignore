@@ -7,6 +7,7 @@
 *.out
 *.toc
 
+sample.pdf
 paper.pdf
 ## Intermediate documents:
 *.dvi

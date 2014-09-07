@@ -1,0 +1,70 @@
+% THIS IS SIGPROC-SP.TEX - VERSION 3.1
+% WORKS WITH V3.2SP OF ACM_PROC_ARTICLE-SP.CLS
+% APRIL 2009
+%
+% It is an example file showing how to use the 'acm_proc_article-sp.cls' V3.2SP
+% LaTeX2e document class file for Conference Proceedings submissions.
+% ----------------------------------------------------------------------------------------------------------------
+% This .tex file (and associated .cls V3.2SP) *DOES NOT* produce:
+%       1) The Permission Statement
+%       2) The Conference (location) Info information
+%       3) The Copyright Line with ACM data
+%       4) Page numbering
+% ---------------------------------------------------------------------------------------------------------------
+% It is an example which *does* use the .bib file (from which the .bbl file
+% is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission,
+% you need to 'insert'  your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% Questions regarding SIGS should be sent to
+% Adrienne Griscti ---> griscti@acm.org
+%
+% Questions/suggestions regarding the guidelines, .tex and .cls files, etc. to
+% Gerald Murray ---> murray@hq.acm.org
+%
+% For tracking purposes - this is V3.1SP - APRIL 2009
+
+\documentclass{acm_proc_article-sp}
+\usepackage{epstopdf}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{commath}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{url}
+
+\begin{document}
+
+\title{Fixing of thin regions to improve 3D printability}
+\numberofauthors{3} 
+\author{
+% 1st. author
+\alignauthor
+Shobhit Chaurasia\\
+       \affaddr{11010179}\\
+       \affaddr{Indian Institute of Technology Guwahati}\\
+       \email{c.shobhit@iitg.ernet.in}
+% 2nd. author
+\alignauthor
+Harshil Lodhi\\
+       \affaddr{11010179}\\
+       \affaddr{Indian Institute of Technology Guwahati}\\
+       \email{harshil@iitg.ernet.in}
+}
+
+\maketitle
+\begin{abstract}
+The use of 3D printing has rapidly expanded in the past couple of years. It is now possible to produce 3D printed objects with exceptionally high precision. However, the 3D objects might have numerous \textit{thin} regions and weak joints, which are susceptible to breakage during the printing process itself, or during handling. We present a system that addresses this issue by automatic detection and correction of the thin regions.
+
+The input 3D model is first voxelized. The voxel grid is scanned along different directions to identify thin regions. The thin regions, thus identified, are fixed by adding extra voxels at the violations. Further, tools from mathematical morphology are used to add extra material at joints of the 3D model. Finally, the voxelized fixed model is converted back to \texttt{STL} form using tools from \cite{abfab3d:project} project.
+\end{abstract}
+
+\input{introduction}
+
+\bibliographystyle{plainnat}
+\bibliography{paper}
+\end{document}
