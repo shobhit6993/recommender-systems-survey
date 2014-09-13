@@ -1,0 +1,57 @@
+\section{Types}
+\subsection{Collaborative Filtering}
+Collarborative Filtering methods try to find similar users and the recommend items based on what similar users have liked in the past. Collaborative Filtering methods try to predict the score/utility of items for a user for the item that is not rated by him/her. Formally, it tries to estimate s(u,i) where s is the scoring/utliting function, u is the user and I is the item. This estimation is done based on s(uj,I) i.e the score assigned to item s by user uj belongs to U(set of all users) who are `similar` to user u. For the purpose of estimation, we can use various aggregation functions such as : 
+
+Limitations:
+
+1. New User Problem
+
+When a new user joins the systems, the system has no information about the users feature vector. To make accurate recommendations, the knowledge of user's preference is necessary. To tackle this problem, systems collect explicit and implicit feedback from the users [c] . Explicit information is asked in the form of registration forms, asking users to rate some items etc. Implicit information is collected by observing the browsing patterns of the user, time spent on webpages, analyzing social network data of the user.
+
+1. New Item Problem
+
+Similar to new user problem, new items are frequently added to the system. Therefore until the new item has been rated by a large no. of users, it would be diffcult to recommend it to someone. The problem is addressed by hybrid recommendation systems.
+
+1. Sparsity of the matrix.
+
+The utility matrix is very sparse. A particular user would not rate more than a few items. With repositories having millions of items, there are too many unfilled cells in the matrix that the system needs to predicate. Demographic filtering( using data such as age, location etc are also used ) is one of the methods to tackle this problem. Low rank approximation, SVDs are some other methods to reduce the rank of the matrix so that the computation become easy. 
+
+\subsection{Content Based Filtering}
+
+Content Based filtering methods try to find similar items that a user has bought/liked in the past. The best matching items are then recommend to the user. Formally the score for an item for a user s(u,I) is estimated by s(u,I') where I' are the items which are similar to I . For eg. A movie recommendation system based on content based filtering will recommend similar movies to what a user has seen in the past. The similarity between movies can be based on actors, directors, genre etc. The content based profile of an item is defined as
+
+Content(it) = (f1,f2,….fn)
+
+where the f1 … fn are the values corresponding to a feature which is charatersized in the item. For eg. a feature in a movie recommendation system can be the year in which movie is released. Another one could be representing the genre of the movie.
+
+Similarly content based profile of an user is defined:
+
+UserProfile(u) = (f1,f2,f3...fn)
+
+where the f1 … fn are the values corresponding to a feature which represents a user.
+
+To recommend items we will find the similarity between user profile and content profile
+
+utility(u,it) = score(UserProfile(u), Content(it))
+
+For documents f1,f2...fn can be words and the values can represent the TF-IDF score
+
+Limitations:
+
+1. Limited Information about user and items- All the information about user has to be explicit and must be in a form that can be parsed by computers. This works well if the information is availbale as text but fails badly when information is in some other format such as images, audio , videos etc.
+
+2. Overspecialization- Since we only recommend items based on the content profile, its difficult to bring in diversity in the recommendations. For eg- it would never happen in this system that the system is recommending a very good mexican restaurant to a person who has only rated indian food.
+
+3. New User Problem - When a new user join the system, system has a very limited information about the user. In this situation, it is very difficult to give any meaningful recommendations. Therefore the new user has to rate a few items that he/she likes, then only the system can work. 
+\subsection{Hybrid Systems}
+Researcher in the recent past have tried to combine the collaborative and content based filtering methods to come up with a hybrid system which helps in avoiding certain limitations of the traditional systems. It was observed that these hybrid systems are more effective than individual subsystems in some cases.
+
+For eg. Movie recommendation systems like the one that netflix uses recommends movie based on the what similar users have liked/rated in the past and also recommends movies which are similar to what user have watched in past.
+
+Following are some of the ways that hybrid systems are built:
+
+1. Collaborative and Content based systems are implemented seperately and scores from both the systems are combined numerically.
+
+2. Cascading all systems. Giving the output of one recommendations system to other.
+
+3. Unified modelling where features of both collaborative and content based methods are combined. 
