@@ -1,6 +1,6 @@
 \section{Types}
 \subsection{Collaborative Filtering}
-Collaborative Filtering methods try to find similar users and the recommend items based on what similar users have liked in the past. Collaborative Filtering methods try to predict the score/utility of items for a user for the item that is not rated by him/her. Formally, it tries to estimate $s(u,i)$ where $s$ is the scoring/utility function, $u$ is the user and $i$ is the item. This estimation is done based on $s(u_j,i)$ i.e the score assigned to item $s$ by user $u_j\in U$(set of all users) who are $'$similar$'$ to user $u$. For the purpose of estimation, we can use various aggregation functions such as : 
+Collaborative Filtering methods try to find similar users and the recommend items based on what similar users have liked in the past. Collaborative Filtering methods try to estimate the score/relevance of items for a user for the item that is not rated by him/her. Formally, it tries to estimate $s(u,i)$ where $s$ is the scoring/utility function, $u$ is the user and $i$ is the item. This estimation is done based on $s(u_j,i)$ i.e the score assigned to item $s$ by user $u_j\in U$(set of all users) who are $'$similar$'$ to user $u$. For the purpose of estimation, we can use various aggregation functions such as : 
 \begin{equation}
 s(u,i) = \frac{1}{N}\sum\nolimits_{u' \in U} s(u',i) 
 \end{equation}
@@ -13,7 +13,7 @@ s(u,i) = k\sum\nolimits_{u' \in U} sim(u,u') * s(u',i)
 
 1. {\bf New User Problem} - When a new user joins the systems, the system has no information about the user's feature vector. To make accurate recommendations, the knowledge of user's preference is necessary. To tackle this problem, systems collect explicit and implicit feedback from the users. Explicit information is asked in the form of registration forms, asking users to rate some items etc. Implicit information is collected by observing the browsing patterns of the user, time spent on webpages, analysing social network data of the user.
 
-2. {\bf New Item Problem} - Similar to new user problem, new items are frequently added to the system. Therefore until the new item has been rated by a large number of users, it would be difficult to recommend it to someone. The problem is addressed by hybrid recommendation systems.
+2. {\bf New Item Problem} - Similar to above problem, newer items are frequently added to the system. Therefore until the newly added item has been rated by sufficiently large number of users, it would be difficult to recommend it to someone. The problem is addressed by hybrid recommendation systems.
 
 3. {\bf Sparsity of the matrix} - The utility matrix is very sparse. A particular user would not rate more than a few items. With repositories having millions of items, there are too many unfilled cells in the matrix that the system needs to predicate. Demographic filtering (using data such as age, location etc.) is one of the methods to tackle this problem. Low rank approximation, SVDs are some other methods to reduce the rank of the matrix so that the computations become feasible. 
 
@@ -43,7 +43,7 @@ For example, in case of documents $f_1,f_2,f_3,\dots f_n$ can represent words an
 
 2. {\bf Overspecialization} - Since we only recommend items based on the content profile, its difficult to bring in diversity in the recommendations. For example, it would never happen in this system that the system is recommending a very good Mexican restaurant to a person who has only rated Indian food.
 
-3. {\bf New User Problem} - When a new user join the system, system has a very limited information about the user. In this situation, it is very difficult to give any meaningful recommendations. Therefore the new user has to rate a few items that he/she likes, then only the system can work. 
+3. {\bf New User Problem} - When a new user joins the system, system has a very limited information about the user. In this situation, it is very difficult to give any meaningful recommendations. Therefore the new user has to rate a few items that he/she likes, then only the system can work. 
 
 \subsection{Hybrid Systems}
 Researchers in the recent past have tried to combine the collaborative and content based filtering methods to come up with a hybrid system which helps in avoiding certain limitations of the traditional systems. It was observed that these hybrid systems are more effective than individual subsystems in some cases.
