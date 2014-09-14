@@ -1,6 +1,6 @@
 \section{Types}
 \subsection{Collaborative Filtering}
-Collarborative Filtering methods try to find similar users and the recommend items based on what similar users have liked in the past. Collaborative Filtering methods try to predict the score/utility of items for a user for the item that is not rated by him/her. Formally, it tries to estimate $s(u,i)$ where $s$ is the scoring/utliting function, $u$ is the user and $i$ is the item. This estimation is done based on $s(u_j,i)$ i.e the score assigned to item $s$ by user $u_j$ belongs to $U$(set of all users) who are `similar` to user $u$. For the purpose of estimation, we can use various aggregation functions such as : 
+Collarborative Filtering methods try to find similar users and the recommend items based on what similar users have liked in the past. Collaborative Filtering methods try to predict the score/utility of items for a user for the item that is not rated by him/her. Formally, it tries to estimate $s(u,i)$ where $s$ is the scoring/utliting function, $u$ is the user and $i$ is the item. This estimation is done based on $s(u_j,i)$ i.e the score assigned to item $s$ by user $u_j\in U$(set of all users) who are $'$similar$'$ to user $u$. For the purpose of estimation, we can use various aggregation functions such as : 
 \begin{equation}
 s(u,i) = \frac{1}{N}\sum\nolimits_{u' \in U} s(u',i) 
 \end{equation}
@@ -9,11 +9,11 @@ s(u,i) = \frac{1}{N}\sum\nolimits_{u' \in U} s(u',i)
 s(u,i) = k\sum\nolimits_{u' \in U} sim(u,u') * s(u',i) 
 \end{equation}
 
-Limitations:
+\subsubsection{Limitations}
 
 1. {\bf New User Problem}
 
-When a new user joins the systems, the system has no information about the users feature vector. To make accurate recommendations, the knowledge of user's preference is necessary. To tackle this problem, systems collect explicit and implicit feedback from the users [c] . Explicit information is asked in the form of registration forms, asking users to rate some items etc. Implicit information is collected by observing the browsing patterns of the user, time spent on webpages, analyzing social network data of the user.
+When a new user joins the systems, the system has no information about the user's feature vector. To make accurate recommendations, the knowledge of user's preference is necessary. To tackle this problem, systems collect explicit and implicit feedback from the users [c] . Explicit information is asked in the form of registration forms, asking users to rate some items etc. Implicit information is collected by observing the browsing patterns of the user, time spent on webpages, analyzing social network data of the user.
 
 2. {\bf New Item Problem}
 

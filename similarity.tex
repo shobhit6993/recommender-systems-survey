@@ -1,13 +1,13 @@
 \section{Similarity}
 Similarity of two items is defined as their \textit{closeness}. In Euclidean geometry, similarity of 2 points (vectors) $p_1=(\alpha_{11}, \alpha_{12},\dots,\alpha_{1n})$ and $p_2=(\alpha_{21}, \alpha_{22},\dots,\alpha_{2n})$ can be measured by calculating the Euclidean distance $d_E(p_1,p_2)$ as:
 \begin{equation}
-d_E(p_1,p_2) = \sqrt{(\alpha_{11}-\alpha_{21})^2+(\alpha_{12}-\alpha_{22})^2+\dots +(\alpha_{1n}-\alpha_{2n})^2} \nonumber
+d_E(p_1,p_2) = \sqrt{(\alpha_{11}-\alpha_{21})^2+\dots +(\alpha_{1n}-\alpha_{2n})^2} \nonumber
 \end{equation}
 Another measure in Euclidean space is the \textit{$L_r$-norm} given by:
 \begin{equation}
 L_r(p_1,p_2) = (\displaystyle\sum_{i=1}^n \abs{\alpha_{1i}-\alpha_{2i}}^r)^{1/r}
 \end{equation}
-The \textit{$L_2$-norm} is same as the Euclidean Distance. Another common measure in Euclidean space is the Manhattan Distance which is the \textit{$L_1$-norm}. These measures work well when the attributes of the two vectors have numerical values. However, in case of nominal attributes, such as gender (male, female), hair colour (black, brown, red, etc.) or ordinal attributes such as shirt size (small, medium, large, etc.), these trivial measures for computing similarity fail. To this end, measures such as Cosine Similarity and Pearson Correlation Similarity have been used [cite 6th paper].
+The \textit{$L_2$-norm} is same as the Euclidean Distance. A common measure in Euclidean space is the Manhattan Distance which is the \textit{$L_1$-norm}. These measures work well when the attributes of the two vectors have numerical values. However, in case of nominal attributes, such as gender (male, female), hair colour (black, brown, red, etc.) or ordinal attributes such as shirt size (small, medium, large, etc.), these trivial measures for computing similarity fail. To this end, measures such as Cosine Similarity and Pearson Correlation Similarity have been used \cite{almazro:survey}.
 
 \begin{figure}[ht]
 \centering
